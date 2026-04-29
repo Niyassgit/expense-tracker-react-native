@@ -58,7 +58,7 @@ const ExpenseForm = ({ submitButtonLabel, onCancel, onSubmit, defaultValues }) =
             <View style={styles.inputsRow}>
                 <Input label="Amount"
                     style={styles.rowInput}
-                    invalid={inputs.amount.isValid}
+                    invalid={!inputs.amount.isValid}
                     textInputConfig={{
                         keyboardType: 'decimal-pad',
                         onChangeText: inputChangeHandler.bind(this, 'amount'),
@@ -67,7 +67,7 @@ const ExpenseForm = ({ submitButtonLabel, onCancel, onSubmit, defaultValues }) =
                 />
                 <Input
                     style={styles.rowInput}
-                    invalid={inputs.date.isValid}
+                    invalid={!inputs.date.isValid}
                     label="Date" textInputConfig={{
                         placeholder: 'YYYY-MM-DD',
                         maxLength: 10,
@@ -77,7 +77,7 @@ const ExpenseForm = ({ submitButtonLabel, onCancel, onSubmit, defaultValues }) =
             </View>
 
             <Input
-                invalid={inputs.description.isValid}
+                invalid={!inputs.description.isValid}
                 label="Description" textInputConfig={{
 
                     multiline: true,
